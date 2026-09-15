@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Ghetto Girlz Gazette — Sierra Drops SiFood</title>
+<meta name="description" content="Slappin' SiFood Seasoning is coming. Get on the list and read it here first.">
+<meta property="og:title" content="EXTRA! EXTRA! Sierra Drops SiFood">
+<meta property="og:description" content="Two heats. One list. The Gazette subscribers hear first.">
+<meta property="og:image" content="img/lineup.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Bebas+Neue&family=Outfit:wght@400;500;600;700&family=UnifrakturMaigre&display=swap">
+<style>
+:root{
+  --paper:#EDE7D8;
+  --paper-2:#E3DCCA;
+  --ink:#14110D;
+  --ink-2:#4A443A;
+  --rule:#14110D;
+  --red:#FF553E;
+  --orange:#FF9933;
+  --pink:#F719AD;
+  --purple:#AB23CC;
+  --blue:#1044E8;
+  --yellow:#FFD066;
+  --mast:'UnifrakturMaigre','Times New Roman',serif;
+  --display:'Archivo','Arial Black','Helvetica Neue',Arial,sans-serif;
+  --head:'Outfit','Helvetica Neue',Arial,sans-serif;
+  --sub:'Bebas Neue','Oswald','Arial Narrow',sans-serif;
+  --body:'Outfit','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-weight:400;font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(rgba(20,17,13,.035) 1px, transparent 1px),
+    radial-gradient(rgba(20,17,13,.025) 1px, transparent 1px);
+  background-size:3px 3px, 5px 5px;
+  background-position:0 0, 1px 2px;
+}
+.sheet{max-width:1020px;margin:0 auto;background:var(--paper);
+  border-left:1px solid rgba(20,17,13,.12);border-right:1px solid rgba(20,17,13,.12)}
+.pad{padding:0 30px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+img{display:block;max-width:100%;height:auto}
+
+/* ---------- masthead ---------- */
+.topline{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--sub);font-size:13px;letter-spacing:.075em;text-transform:uppercase;
+  color:var(--ink-2);padding:12px 0 9px}
+.mast{font-family:var(--mast);font-weight:400;text-align:center;line-height:1;
+  font-size:clamp(38px,8.4vw,86px);margin:0;padding:4px 0 10px}
+.rule-thick{border-top:3px solid var(--rule);border-bottom:1px solid var(--rule);height:5px}
+.rule-thin{border-top:1px solid var(--rule)}
+.dateline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-family:var(--sub);font-size:13px;letter-spacing:.075em;text-transform:uppercase;
+  color:var(--ink);padding:8px 0}
+
+/* ---------- lead ---------- */
+.lead{padding:26px 0 0}
+.extra{display:inline-block;background:var(--red);color:var(--paper);
+  font-family:var(--sub);font-size:clamp(17px,2.6vw,23px);letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 15px 3px;transform:rotate(-1.4deg);margin:0 0 14px}
+h1.head{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(46px,10.6vw,116px);line-height:.86;letter-spacing:-.012em;margin:0;text-wrap:balance}
+h1.head .sm{display:block;font-size:.44em;letter-spacing:.005em;line-height:.95;margin-top:.14em}
+.standfirst{font-size:clamp(18px,2.3vw,22px);line-height:1.45;max-width:62ch;margin:18px 0 0;color:var(--ink)}
+.standfirst b{font-weight:700}
+.byline{font-family:var(--sub);font-size:14px;letter-spacing:.075em;text-transform:uppercase;
+  color:var(--ink-2);margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule)}
+
+.leadart{margin:22px 0 0;position:relative}
+.leadart img{width:100%;filter:contrast(1.06) saturate(1.04)}
+.cap{font-family:var(--sub);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-2);padding:8px 0 0;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.cap b{color:var(--ink)}
+
+/* ---------- coupon / signup ---------- */
+.coupon{margin:34px 0 0;border:3px double var(--rule);background:var(--paper-2);position:relative}
+.coupon::before{content:"✂";position:absolute;top:-13px;left:18px;background:var(--paper-2);
+  padding:0 7px;font-size:17px;line-height:1;color:var(--ink-2)}
+.coupon-in{padding:26px 26px 28px}
+.coupon .kicker{font-family:var(--sub);font-size:14px;letter-spacing:.075em;text-transform:uppercase;color:var(--red);margin:0 0 8px}
+.coupon h2{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(28px,4.8vw,44px);line-height:.9;margin:0 0 10px;text-wrap:balance}
+.coupon p.lede{margin:0 0 20px;max-width:56ch;color:var(--ink)}
+.f-row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.f-col{flex:1 1 250px;display:flex;flex-direction:column;gap:7px}
+.lbl{font-family:var(--head);font-weight:700;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+input[type=email]{width:100%;background:var(--paper);border:2px solid var(--rule);color:var(--ink);
+  font-family:var(--body);font-size:17px;padding:13px 14px;border-radius:0}
+input[type=email]::placeholder{color:#8C8474}
+.heats{display:flex;gap:9px}
+.opt{flex:1;position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.opt span{display:block;text-align:center;padding:12px 6px;border:2px solid var(--rule);background:var(--paper);
+  font-family:var(--sub);font-size:17px;letter-spacing:.075em;text-transform:uppercase;cursor:pointer;
+  transition:background .14s,color .14s}
+.opt span small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.02em;text-transform:none;color:var(--ink-2);font-weight:500}
+.opt input:checked+span{background:var(--ink);color:var(--paper)}
+.opt input:checked+span small{color:var(--paper-2)}
+.opt input:focus-visible+span{outline:3px solid var(--red);outline-offset:2px}
+button.cta{margin:18px 0 0;width:100%;border:0;cursor:pointer;
+  font-family:var(--sub);font-size:23px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--red);color:var(--paper);padding:16px 30px;transition:background .15s,transform .1s}
+button.cta:hover:not(:disabled){background:var(--ink)}
+button.cta:active:not(:disabled){transform:translateY(1px)}
+button.cta:disabled{opacity:.6;cursor:default}
+.fine{font-size:13px;color:var(--ink-2);margin:12px 0 0}
+.msg{margin:12px 0 0;font-size:14.5px;min-height:0}
+.msg.bad{color:#B42318;font-weight:600}
+.thanks{display:none}
+.coupon.done .form-part{display:none}
+.coupon.done .thanks{display:block}
+.thanks .stamp{display:inline-block;border:3px solid var(--red);color:var(--red);
+  font-family:var(--sub);font-size:clamp(22px,4vw,34px);letter-spacing:.09em;text-transform:uppercase;
+  padding:7px 18px 4px;transform:rotate(-3deg);margin:0 0 16px}
+.thanks h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(26px,4.4vw,40px);line-height:.9;margin:0 0 10px}
+.thanks p{margin:0;max-width:56ch;color:var(--ink)}
+
+/* ---------- columns ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:40px 0 0;border-top:3px solid var(--rule)}
+.col{padding:22px 24px 24px}
+.col + .col{border-left:1px solid var(--rule)}
+.col h3{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(23px,3.4vw,32px);line-height:.92;margin:0 0 10px;text-wrap:balance}
+.col .sub{font-family:var(--sub);font-size:13px;letter-spacing:.075em;text-transform:uppercase;color:var(--red);margin:0 0 9px}
+.col p{margin:0 0 11px;font-size:16px;color:var(--ink)}
+.col img{margin:0 0 12px;filter:contrast(1.06)}
+
+/* ---------- heats table ---------- */
+.sec{margin:40px 0 0;border-top:3px solid var(--rule);padding-top:20px}
+.sec-h{font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-2);margin:0 0 18px}
+.heat-tbl{width:100%;border-collapse:collapse}
+.heat-tbl th{text-align:left;font-family:var(--sub);font-size:14px;letter-spacing:.075em;text-transform:uppercase;
+  color:var(--ink-2);font-weight:400;padding:0 0 9px;border-bottom:1px solid var(--rule)}
+.heat-tbl td{padding:16px 0;border-bottom:1px solid rgba(20,17,13,.22);vertical-align:top}
+.heat-tbl .nm{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(22px,3.2vw,30px);line-height:1;white-space:nowrap;padding-right:22px}
+.heat-tbl .dots{display:flex;gap:4px;padding:5px 0 0}
+.heat-tbl .dots b{width:22px;height:7px;background:rgba(20,17,13,.18)}
+.heat-tbl tr.orig .dots b:nth-child(-n+2){background:var(--orange)}
+.heat-tbl tr.spicy .dots b:nth-child(-n+5){background:var(--red)}
+.heat-tbl .desc{font-size:15.5px;color:var(--ink);padding-right:20px}
+.heat-tbl .pr{font-family:var(--sub);font-size:21px;letter-spacing:.06em;text-align:right;white-space:nowrap}
+
+/* ---------- book ---------- */
+.book{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start;margin:22px 0 0}
+.book img{border:1px solid var(--rule)}
+.book .free{display:inline-block;background:var(--ink);color:var(--paper);
+  font-family:var(--sub);font-size:15px;letter-spacing:.09em;text-transform:uppercase;padding:5px 13px 3px;margin:0 0 12px}
+.book h3{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(26px,4.2vw,40px);line-height:.9;margin:0 0 12px;text-wrap:balance}
+.book ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.book li{display:flex;gap:11px;font-size:16px;color:var(--ink)}
+.book li::before{content:"";flex:0 0 4px;background:var(--pink);margin:7px 0}
+.book li b{font-weight:700}
+
+/* ---------- stages ---------- */
+.stages{display:grid;gap:0;margin:20px 0 0;border-top:1px solid var(--rule)}
+.stage{display:grid;grid-template-columns:58px 1fr auto;gap:18px;align-items:baseline;
+  padding:17px 0;border-bottom:1px solid rgba(20,17,13,.22)}
+.stage .n{font-family:var(--display);font-weight:900;font-size:30px;line-height:1;color:rgba(20,17,13,.22)}
+.stage.now .n{color:var(--red)}
+.stage h4{font-family:var(--sub);font-size:21px;letter-spacing:.075em;text-transform:uppercase;margin:0 0 3px;font-weight:400}
+.stage p{margin:0;font-size:15.5px;color:var(--ink-2);max-width:54ch}
+.stage .when{font-family:var(--sub);font-size:13.5px;letter-spacing:.075em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.stage.now .when{color:var(--red)}
+
+/* ---------- footer ---------- */
+footer{margin:44px 0 0;border-top:3px solid var(--rule);padding:22px 0 40px;
+  font-size:13.5px;color:var(--ink-2)}
+footer .fm{font-family:var(--mast);font-size:26px;color:var(--ink);margin:0 0 7px;line-height:1}
+footer p{margin:0 0 4px}
+
+@media (max-width:820px){
+  .cols{grid-template-columns:1fr}
+  .col + .col{border-left:0;border-top:1px solid var(--rule)}
+  .book{grid-template-columns:1fr}
+  .book img{max-width:300px}
+  .pad{padding:0 20px}
+  .stage{grid-template-columns:40px 1fr;row-gap:5px}
+  .stage .when{grid-column:2}
+  .heat-tbl .nm{padding-right:12px}
+  .heat-tbl .desc{font-size:14.5px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <div class="topline">
+      <span>Vol. 1 &middot; No. 1 &middot; The Comeback Issue</span>
+      <span>Free to subscribers</span>
+    </div>
+    <h1 class="mast">The Ghetto Girlz Gazette</h1>
+    <div class="rule-thick"></div>
+    <div class="dateline">
+      <span>Atlanta, Georgia</span>
+      <span>Seafood Desk</span>
+      <span>150 recipes inside</span>
+    </div>
+    <div class="rule-thin"></div>
+
+    <div class="lead">
+      <span class="extra">Extra! Extra!</span>
+      <h1 class="head">Sierra Drops<br>SiFood<span class="sm">Two heats. One list. Nobody else knows yet.</span></h1>
+      <p class="standfirst">Nine bottles deep, and Sierra finally blended one for the boil. <b>Slappin&rsquo; SiFood</b> comes in Original and Spicy, and it is <b>not on the site</b>. The Gazette&rsquo;s subscribers get the drop date, the early-access link, and the recipe book &mdash; in that order, before anybody.</p>
+      <p class="byline">Reported by the Ghetto Girlz Eat test kitchen &middot; 237 Peters St SW, Atlanta</p>
+
+      <div class="leadart">
+        <img src="img/lineup.jpg" alt="Slappin' SiFood Seasoning bottles in Original and Spicy, with Si-Sauce and lemons, on Ghetto Girlz Gazette newsprint" width="1800" height="1200">
+        <p class="cap"><b>The evidence.</b> Original and Spicy, photographed this week on the Gazette&rsquo;s own front page.</p>
+      </div>
+
+      <!-- ===== SIGNUP ===== -->
+      <div class="coupon" id="coupon">
+        <div class="coupon-in">
+          <div class="form-part">
+            <p class="kicker">Subscription coupon &mdash; clip and return</p>
+            <h2>Put me on the list</h2>
+            <p class="lede">One email when it drops, plus your early-access link and the SI-FOOD recipe book. That&rsquo;s the whole deal.</p>
+            <form id="f" novalidate>
+              <div class="f-row">
+                <div class="f-col">
+                  <label class="lbl" for="em">Your email</label>
+                  <input id="em" type="email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required>
+                </div>
+                <div class="f-col">
+                  <span class="lbl">Which heat are you?</span>
+                  <div class="heats">
+                    <label class="opt"><input type="radio" name="heat" value="Original" checked><span>Original<small>Season everything</small></span></label>
+                    <label class="opt"><input type="radio" name="heat" value="Spicy"><span>Spicy<small>Bring the burn</small></span></label>
+                  </div>
+                </div>
+              </div>
+              <button class="cta" type="submit" id="btn">Sign me up</button>
+              <p class="msg" id="msg" role="status" aria-live="polite"></p>
+            </form>
+            <p class="fine">We&rsquo;ll only email you about this drop. Unsubscribe any time.</p>
+          </div>
+          <div class="thanks" id="thanks">
+            <span class="stamp">Subscribed</span>
+            <h3>You&rsquo;re on the list.</h3>
+            <p>Check your inbox for the confirmation. When SiFood drops you&rsquo;ll hear it here first &mdash; and the SI-FOOD recipe book comes with it.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== COLUMNS ===== -->
+      <div class="cols">
+        <div class="col">
+          <img src="img/seasoning.jpg" alt="Sierra seasoning a seafood boil spread at the table" width="1200" height="1800">
+          <p class="sub">On the scene</p>
+          <h3>Crabs caught unseasoned</h3>
+          <p>It is the oldest complaint in Atlanta: the boil looks right and tastes like water. SiFood was built for that exact table &mdash; it seasons the water, the butter and the shell, not just the top of the pile.</p>
+          <p>Garlic, celery salt, paprika and lemon pepper, hand-blended in small batches.</p>
+        </div>
+        <div class="col">
+          <img src="img/spoken.jpg" alt="Sierra reading The Ghetto Girlz Gazette" width="1100" height="1650">
+          <p class="sub">Editorial</p>
+          <h3>The girls have spoken</h3>
+          <p>Y&rsquo;all asked for a seafood blend in the comments, in the DMs, and to Sierra&rsquo;s face at every cookout since spring.</p>
+          <p>This is the answer. The only question left is how much of it gets made, and the list decides that by how fast it fills.</p>
+        </div>
+      </div>
+
+      <!-- ===== HEATS ===== -->
+      <div class="sec">
+        <p class="sec-h">The two heats</p>
+        <table class="heat-tbl">
+          <thead><tr><th>Blend</th><th>Heat</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr class="orig">
+              <td class="nm">Original</td>
+              <td><div class="dots" aria-label="Heat 2 of 6"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+                  <p class="desc" style="margin:9px 0 0">Built for crab legs, shrimp and catfish. Goes in the boil water and the butter both.</p></td>
+              <td class="pr">$16.00</td>
+            </tr>
+            <tr class="spicy">
+              <td class="nm">Spicy</td>
+              <td><div class="dots" aria-label="Heat 5 of 6"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+                  <p class="desc" style="margin:9px 0 0">Same backbone, cayenne forward. For the people who reach for hot sauce before they taste it.</p></td>
+              <td class="pr">$16.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ===== BOOK ===== -->
+      <div class="sec">
+        <p class="sec-h">Free with your subscription</p>
+        <div class="book">
+          <img src="img/cookbook.jpg" alt="SI-FOOD cookbook cover, The Ghetto Girlz Gazette comeback issue" width="900" height="1218">
+          <div>
+            <span class="free">No charge</span>
+            <h3>The SI-FOOD book</h3>
+            <p style="margin:0"><b>125 seafood recipes and 25 cocktails to match.</b> Written around the bottle you&rsquo;re about to own.</p>
+            <ul>
+              <li><span>Boils, fries, baked and grilled &mdash; <b>every recipe measured</b>, with real temps and times.</span></li>
+              <li><span>Grandma Punkin&rsquo;s rules: season ahead, pat it dry, <b>bloom the seasoning in fat</b>.</span></li>
+              <li><span>A digital download. <b>Nothing to ship, nothing to wait on.</b></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== STAGES ===== -->
+      <div class="sec">
+        <p class="sec-h">How the drop runs</p>
+        <div class="stages">
+          <div class="stage now">
+            <div class="n">01</div>
+            <div><h4>You join the list</h4><p>Held the second you hit subscribe. Nothing to buy, nothing to claim.</p></div>
+            <div class="when">You are here</div>
+          </div>
+          <div class="stage">
+            <div class="n">02</div>
+            <div><h4>Early access opens</h4><p>The list shops before the site does. Both heats, full stock, no code needed.</p></div>
+            <div class="when">List only</div>
+          </div>
+          <div class="stage">
+            <div class="n">03</div>
+            <div><h4>Public drop</h4><p>Whatever is left goes up for everybody at $16.00 a bottle.</p></div>
+            <div class="when">After the list</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /lead -->
+
+    <footer>
+      <p class="fm">The Ghetto Girlz Gazette</p>
+      <p>Ghetto Girlz Eat &middot; 237 Peters St SW, Atlanta, GA 30313</p>
+      <p>Hand-blended in small batches. Si Food, not seafood.</p>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function(){
+  var COMPANY="TPyAQy", LIST="YgfCDJ";
+  var f=document.getElementById('f'), em=document.getElementById('em'),
+      msg=document.getElementById('msg'), btn=document.getElementById('btn'),
+      box=document.getElementById('coupon');
+  function ok(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}
+  function say(t,bad){msg.textContent=t;msg.className='msg'+(bad?' bad':'');}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=em.value.trim();
+    if(!ok(v)){ say("That email doesn't look right — check it and try again.",true); em.focus(); return; }
+    var heat=(f.querySelector('input[name=heat]:checked')||{}).value||'Original';
+    btn.disabled=true; say('Signing you up…',false);
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+COMPANY,{
+      method:'POST',
+      headers:{'revision':'2024-10-15','content-type':'application/json'},
+      body:JSON.stringify({data:{type:'subscription',attributes:{
+        custom_source:'SiFood Waitlist Page',
+        profile:{data:{type:'profile',attributes:{email:v,properties:{
+          'SiFood Heat Preference':heat,'Signup Source':'SiFood waitlist page'}}}}
+      },relationships:{list:{data:{type:'list',id:LIST}}}}})
+    }).then(function(r){
+      if(r.status===202||r.ok){ box.classList.add('done'); box.scrollIntoView({block:'center',behavior:'smooth'}); }
+      else { btn.disabled=false; say("That didn't go through. Try again in a moment.",true); }
+    }).catch(function(){
+      btn.disabled=false; say("That didn't go through — check your connection and try again.",true);
+    });
+  });
+  em.addEventListener('input',function(){ if(msg.textContent) say('',false); });
+})();
+</script>
+</body>
+</html>
