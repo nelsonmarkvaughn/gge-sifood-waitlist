@@ -92,9 +92,14 @@ h1.head .sm{display:block;font-size:.44em;letter-spacing:.005em;line-height:.95;
 .f-row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
 .f-col{flex:1 1 250px;display:flex;flex-direction:column;gap:7px}
 .lbl{font-family:var(--head);font-weight:700;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
-input[type=email]{width:100%;background:var(--paper);border:2px solid var(--rule);color:var(--ink);
+input[type=email],input[type=text],input[type=tel]{width:100%;background:var(--paper);border:2px solid var(--rule);color:var(--ink);
   font-family:var(--body);font-size:17px;padding:13px 14px;border-radius:0}
-input[type=email]::placeholder{color:#8C8474}
+input[type=email]::placeholder,input[type=text]::placeholder,input[type=tel]::placeholder{color:#8C8474}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:4px 0 0;cursor:pointer}
+.consent input{margin:3px 0 0;width:17px;height:17px;flex:0 0 17px;accent-color:var(--red);cursor:pointer}
+.consent span{font-family:var(--sub);font-size:16px;letter-spacing:.075em;text-transform:uppercase;line-height:1.15}
+.consent small{display:block;font-family:var(--body);font-size:11.5px;letter-spacing:0;text-transform:none;
+  color:var(--ink-2);line-height:1.45;margin-top:5px;font-weight:400;max-width:62ch}
 .heats{display:flex;gap:9px}
 .opt{flex:1;position:relative}
 .opt input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
@@ -227,10 +232,20 @@ footer p{margin:0 0 4px}
             <h2>Put me on the list</h2>
             <p class="lede">One email when it drops, plus your early-access link and the SI-FOOD recipe book. That&rsquo;s the whole deal.</p>
             <form id="f" novalidate>
-              <div class="f-row">
+              <div class="f-row" style="margin-bottom:12px">
+                <div class="f-col">
+                  <label class="lbl" for="fn">First name</label>
+                  <input id="fn" type="text" name="first_name" placeholder="Sierra" autocomplete="given-name" required>
+                </div>
                 <div class="f-col">
                   <label class="lbl" for="em">Your email</label>
                   <input id="em" type="email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required>
+                </div>
+              </div>
+              <div class="f-row" style="margin-bottom:12px">
+                <div class="f-col">
+                  <label class="lbl" for="ph">Phone <span style="text-transform:none;letter-spacing:0;font-weight:400">(optional)</span></label>
+                  <input id="ph" type="tel" name="phone" placeholder="(404) 555-0123" autocomplete="tel" inputmode="tel">
                 </div>
                 <div class="f-col">
                   <span class="lbl">Which heat are you?</span>
@@ -240,6 +255,12 @@ footer p{margin:0 0 4px}
                   </div>
                 </div>
               </div>
+              <label class="consent" for="sms">
+                <input id="sms" type="checkbox" name="sms">
+                <span>Text me when it drops.
+                  <small>By ticking this you agree to receive recurring automated marketing texts from Ghetto Girlz Eat at the number given. Consent isn&rsquo;t a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out.</small>
+                </span>
+              </label>
               <button class="cta" type="submit" id="btn">Sign me up</button>
               <p class="msg" id="msg" role="status" aria-live="polite"></p>
             </form>
@@ -353,17 +374,36 @@ footer p{margin:0 0 4px}
   function say(t,bad){msg.textContent=t;msg.className='msg'+(bad?' bad':'');}
   f.addEventListener('submit',function(e){
     e.preventDefault();
+    var fn=document.getElementById('fn').value.trim();
     var v=em.value.trim();
+    var phEl=document.getElementById('ph'), smsEl=document.getElementById('sms');
+    if(!fn){ say("We need a first name so we know who we're writing to.",true); document.getElementById('fn').focus(); return; }
     if(!ok(v)){ say("That email doesn't look right — check it and try again.",true); em.focus(); return; }
+
+    // Phone is only ever transmitted with explicit SMS consent —
+    // sending it to Klaviyo subscribes the profile to SMS marketing.
+    var phone=null, raw=(phEl.value||'').replace(/[^\d+]/g,'');
+    if(smsEl.checked){
+      if(raw.charAt(0)!=='+'){ raw=raw.replace(/\D/g,''); if(raw.length===10) raw='+1'+raw; else if(raw.length===11&&raw.charAt(0)==='1') raw='+'+raw; else raw=''; }
+      if(!/^\+\d{10,15}$/.test(raw)){
+        say("Add a mobile number (or untick the text box) and we'll carry on.",true); phEl.focus(); return;
+      }
+      phone=raw;
+    }
+
     var heat=(f.querySelector('input[name=heat]:checked')||{}).value||'Original';
     btn.disabled=true; say('Signing you up…',false);
+
+    var attrs={email:v, first_name:fn,
+      properties:{'SiFood Heat Preference':heat,'Signup Source':'SiFood waitlist page'}};
+    if(phone) attrs.phone_number=phone;
+
     fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+COMPANY,{
       method:'POST',
       headers:{'revision':'2024-10-15','content-type':'application/json'},
       body:JSON.stringify({data:{type:'subscription',attributes:{
         custom_source:'SiFood Waitlist Page',
-        profile:{data:{type:'profile',attributes:{email:v,properties:{
-          'SiFood Heat Preference':heat,'Signup Source':'SiFood waitlist page'}}}}
+        profile:{data:{type:'profile',attributes:attrs}}
       },relationships:{list:{data:{type:'list',id:LIST}}}}})
     }).then(function(r){
       if(r.status===202||r.ok){ box.classList.add('done'); box.scrollIntoView({block:'center',behavior:'smooth'}); }
